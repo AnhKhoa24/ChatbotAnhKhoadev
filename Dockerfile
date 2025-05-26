@@ -1,12 +1,16 @@
-FROM python:3.12-slim
+FROM python:3.10-slim
 
+# Tạo thư mục làm việc
 WORKDIR /app
 
+# Sao chép file dependency
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir --upgrade pip \
- && pip install --no-cache-dir -r requirements.txt
+# Cài đặt thư viện
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Sao chép toàn bộ mã nguồn
 COPY . .
 
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8222"]
+# Chạy FastAPI app bằng Uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8182"]
