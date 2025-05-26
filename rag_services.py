@@ -85,4 +85,4 @@ def ask_groq(question, context_chunks=None, history=None, model="llama-3.3-70b-v
     )
 
     return response.choices[0].message.content.strip()
-
+ 
