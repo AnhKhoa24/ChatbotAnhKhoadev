@@ -1,2 +1,3 @@
 rag_env\Scripts\activate
 python -m venv rag_env
+pip install -r requirements.txt
