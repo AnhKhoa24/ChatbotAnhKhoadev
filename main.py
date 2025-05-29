@@ -32,7 +32,7 @@ def chat(query: Query):
         context = search_context(question)
         response = ask_groq(question, context, history=query.history)
 
-    return {"answer": response}
+    return {"answer": response} 
 
 
 # if __name__ == "__main__":
